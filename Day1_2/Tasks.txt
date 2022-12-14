@@ -16,3 +16,26 @@ If bill for 180 units then
 
 (90*1) + (60*1.5) + (30*2) 
 
+
+90*1 + (60*1.5) + (1 *2)
+
+HomeWork
+_________
+
+1) Write a program to multiplication of 2 numbers  
+
+2) Write a Program to display a number in ROMAN format. from (1 to 9999) 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
