@@ -1,0 +1,158 @@
+enums : Allows you to store group of constrant values. 
+
+syntax : 
+
+enum enum_name {
+  value1, value2, value2
+};
+
+Boxing and Unboxing : 
+
+The concept of converting value types to reference types known as boxing, and reference types to value types known as unboxing. 
+
+Object is the type, that which can be used for boxing and unboxing. 
+
+int x;
+
+x="Hello";
+x=12;
+x=12.5
+
+
+Object x;
+
+x="Hello";
+x=12
+x=12.5;
+
+Method Overloading : The concept of using the same method name w.r.t. Different data types or different parameters known as method overloading.  Here, the method name must be same, but no.of parameters or type of parameters we are passing are different. 
+
+class Test {
+   int a,b;
+   a=5;
+   b=7;
+}
+
+
+The above code throw compile time error, as no class contains code directly, to overcome this, as giving default values to be member variables of the class, then we need the help of constructors. 
+
+A constructor is a special member, which used to initilize the member variables of the class, it is special because it has the same name as that of class name. 
+
+Rules : 
+________
+
+	-> It will not contains any return type
+
+	-> It will not return any value. 
+
+	-> It will be invoked automatically once the instance of the class created. 
+
+	-> A constructor can be overloaded. 
+
+Types of Constructors : 
+_________________________
+
+There are 2 types of constructors 
+
+-> static constructors : these are called class constructors, which are used to initilize the static variables of the class, these constructors are invoked automatically before control reaches the entry point, these constructors cannot be overload. *** In java, we don't have any static constructors, as static block acts as static constructor ***
+
+-> instance constructors : These are the constructors, that which are invoked automatically once the instance of the class created, these constructors can be overloaded. 
+
+static variables : These are the variables that which retains values irrespective of type of object. 
+
+Inheritance : The concept of deriving a new class from already existing class known as inheritance, the class which derived known as derived class, the class from which its derived known as base class. Through inheritance, we can reduce the size of the program. 
+
+class First {
+...
+...
+...
+}
+
+class Second extends First {
+...
+...
+...
+}
+
+class First {
+  void show() {
+...
+...
+}
+}
+
+class Second extends First {
+   void show() {
+   super.show();
+ ....
+ ....
+ ....
+}
+}
+
+class Demo {
+  public static void main(String[] args) {
+     new Second().show();
+  }
+}
+
+super : If you want to pass values from derived class to base class, then we need the help of super keyword. It has 2 forms as 
+
+	(i) super as a keyword
+
+	(ii) super as a constructor
+
+Abstract class : A class, that which can be created, but not implemented and instantiated known as abstract class. Abstract class contains both abstract and non-abstract methods, abstract methods needs to overrided mandetorily by the derived class. 
+
+interface : Java does not support the multiple inheritance, to achieve this we need the help of interfaces, an interface contains method declaration, but the implemntation can be done in the corresponding class, you can add more than one interface to the particular class. 
+
+Difference between interface and abstract class
+__________________________________________________
+
+  -> An abstract class contains both abstrasct and non-abstract methods, where 
+	interface contains only abstract methods. 
+
+  -> interface methods are public and abstract by default. 
+
+  -> Multiple inheritance can be achieved by using interfaces. 
+
+  -> An interface can be called from anywhere to anywhere. 
+
+interface can be added using implements keyword. 
+
+
+interface IOne {
+   void show();
+}
+
+interface ITwo {
+  void show();
+}
+
+interface IThree {
+  void show();
+}
+
+class Test implements IOne, ITwo, IThree {
+
+}
+
+
+1) What is difference between == and equals() 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
