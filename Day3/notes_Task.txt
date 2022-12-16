@@ -1,0 +1,203 @@
+Generics allows you to pass data types at runtime, if you want to make any method as write once and apply for all types, then we need the help of generics. 
+
+Generics will be represented by using <T> notation, as in place of <T> we can pass
+any value type or reference type or custom type. 
+
+public void sum(int a, int b) {
+...
+...
+...
+}
+
+public void sum(T a, T b) {
+...
+...
+...
+}
+
+sum(12,5);
+
+sum(true,false);
+
+sum('A','B');
+
+Advantages of Generics : 
+_________________________
+
+1) Write Once and apply for all types
+
+2) Provides security to data 
+
+3) No Typecasting Required
+
+4) Reduces the no.of lines of code. 
+
+
+void show(int x) {
+...
+...
+...
+}
+
+show();
+show(12);
+show(12,4);
+show(12,4,3223);
+
+1) Create a class as 
+
+Customer
+   customerId (int)
+   customerName (String)
+   city (String)
+   premium (double)
+   installment  (double)
+
+
+Add min 10 records, and sort by City first, but in city if any duplicates are there plesae sort by customerName 
+
+Properties provides an opportunity to protect a field  in a class, if you want to control the internal behaviour of particular entity, then we need the help of properties. 
+
+You can define the behaviour by using getters and setters. 
+
+Exception Handling : 
+
+It is a mechanism of handling the runtime errors during execution of the program. There are 2 types of errors known as 
+
+	(i) Compile Time
+
+	(ii) Runtime 
+
+During runtime, if we pass invalid values, the type of errors we are getting known as runtime errors. By using exception handling, we can overcome the runtime errors. 
+
+To handle exceptions, we have 3 blocks as 
+
+1) try  : This block contains statement(s) in which there is possibility of getting runtime errors, the statement(s) which we place in this block are treated as heavy weighted statement(s) as JVM allocates excess memory to them. 
+
+2) catch : Once exception raised in try block, then the control will be forwarded to catch block, this block contains alternate statement(s) for exceptions raised in try block, one try block can contains multiple catch blocks. 
+
+3) finally : This block contains statements that needs to be executed mandetorily irrespective of try and catch blocks, this block is not mandetory, but all the statement(s) which are placed in this block are executed as mandetory statement(s).
+
+Exception is the top most class, from which all kinds of exceptions are derived. 
+
+try {
+...
+...
+...
+} catch (Exception e) {
+...
+...
+...
+} finally {
+...
+...
+...
+}
+
+public class Quiz1 {
+   public static void main(String[] args)  {
+	int[] a = new int[]{1,2,3,4};
+        try {
+           a[5]=5/0;
+        } catch(ArithmeticException e1) {
+	   System.out.println("Hi");
+	} catch(ArrayIndexOutOfBoundsException e2) {
+	   System.out.println("Hello");
+	} catch(Exception e) {
+	   System.out.println(e);
+	}
+    }
+}
+
+Types of Exceptions : 
+_____________________
+
+There are 2 types of exceptions as 
+
+(i) Checked Exceptions : These are the exceptions, that which occurs at compile time, during compile time JVM finds some erroneous code, and stops the execution at compile time, can be handled at method level by using throws keyword. 
+
+(ii) Unchecked Exceptions : These are the exceptions, that which occurs at runtime can be handled by using try...catch blocks. 
+
+throw keyword : Used to throw exception object based on the condition. 
+
+Write a Program as accept a number, if number < 0 then throw ArithmeticException, if number = 0 then throw NumberFormatException else print that number. 
+
+System exceptions inadequate to handle in all situations, to overcome this we need the help of custom exceptions. Any class, that which derived from Exception can be treated as custom exception. 
+
+class class_name extends Exception {
+     class_name(String err) {
+	super(err);
+     }
+}
+
+Project Requirement
+___________________
+
+Employ
+    empno
+    name
+    gender
+    dept
+    desig
+    basic
+
+perform operations as
+_______________________
+
+1) Add Employ
+2) Show Employ
+3) Search Employ
+4) Delete Employ
+5) Update Employ 
+
+Validations : 
+
+Empno Cannot be zero or negative
+Name contains min. 5 chars
+Dept contains min 3 chars
+Desig contains min 4 chars
+Basic must be between 10000 to 90000
+
+First Create Data Layer (DAO File) for business operations
+Validations to be Done in (BAL file) 
+Call DAO in BAL and BAL to be called in Main()
+
+LeaveDetails.java
+__________________
+
+
+empId (int), 
+leaveStartDate (Date), 
+leaveEndDate(Date), 
+leaveReason(String),
+noOfDays(int)
+leaveType enum (EL, PL, ML) 
+leaveAppliedOn (Date) 
+
+1) Add Leave
+2) ShowLeaves
+
+Valdations : 
+____________
+
+LeaveStartDate cannot be yesterday
+LeaveEndDate cannot be yesterday
+LeaveStartDate cannot  be greater than LeaveEndDate
+noOfDays to be calculated automatically 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
