@@ -1,0 +1,31 @@
+Employee
+	empNo (int)
+	firstName (String)
+	lastName (String)
+	salary (double)
+	leaveAvail (int)
+	hra (double) salary * 0.03
+	da (double)  salary * 0.12 
+	ta (double)  salary * 0.01
+	tax (double) salary * 0.21
+	pf (double)  salary * 0.23
+	gross (double)
+	takeHome (double)
+
+LeaveDetails
+     leaveId (int)
+     empId (int)
+     leaveTaken (int)
+     lossOfPay (double)
+
+Data Layer Operations : 
+_________________________
+
+1) gross = basic + hra + da + ta
+
+2) takeHome = gross - tax - pf - {lossOfPay}
+
+3) empId in Employee class to be generated automatically
+
+4) leaveId int LeaveDetails class to be generated automatically 
+     
