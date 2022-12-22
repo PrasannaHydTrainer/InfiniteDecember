@@ -19,7 +19,7 @@ pst=con.prepareStatement("select * from emp where empno = ?");
 
 The value for the SQL statement can be send by using 
 
-setXXX() method. 
+set() method. 
 
 
 pst.setInt(1,4);
