@@ -1,0 +1,20 @@
+Implement the Below Operations : 
+
+1) Add Stock
+
+2) Search Stock
+
+3) Show Stock
+
+For AddStock, StockId to be generated automatically as S001, S002, S003 etc...
+
+4) PlaceOrder 
+
+OrderId to be generated automatically, 
+
+Take input parameters as StockId and QuantityOrdered 
+
+   -> Insert Record into Orders Table
+   -> Update the QuantityAvaialble in Stock Table
+   -> Add the billAmount into Amount Table
+
