@@ -1,0 +1,474 @@
+1)
+
+class P10{
+   int age;
+   String name;
+   static void disp(){
+      System.out.println("Age is: "+age);
+      System.out.println("Name is: "+name);
+  }
+  public static void main(String args[]) 
+  {
+	  age = 30;
+	  name = "Steve";
+      disp();
+  }
+}
+
+_______________________________________________________________________
+
+2)
+
+	enum Test {
+	    A, B, X, Y, P, C,N;
+	    private Test() {
+        	System.out.println("Hi");
+	    }
+	}
+
+public class P13 {
+    public static void main(String[] args) { 
+        Test t =Test.Y;
+    }
+}
+
+
+____________________________________________________________
+3) 
+
+public class P15 {
+    public static void main(String[] args) {
+        try {
+            int x=5/0;
+        } catch(ArithmeticException e) {
+            System.out.println("Arithmetic Exception");
+        }
+        catch(Exception e) {
+            System.out.println("Global Exception");
+        }
+
+    }
+}
+
+________________________________________________________________
+
+4)
+
+public class P16 {
+    public static void main(String[] args) {
+        try {
+            System.out.println("B");
+            throw new Exception();
+        } catch(ArithmeticException e) {
+            System.out.println("A");
+        } catch(Exception e) {
+            System.out.println("C");
+        } finally {
+            System.out.println("Z");
+        }
+    }
+}
+
+_____________________________________________________________________
+
+5)
+
+public class P17 {
+    public static void main(String[] args) {
+        try {
+            System.out.println("B");
+            throw new NumberFormatException();
+        } catch(ArithmeticException e) {
+            System.out.println("A");
+        } catch(Exception e) {
+            System.out.println("C");
+        } finally {
+            System.out.println("Z");
+        }
+    }
+}
+
+___________________________________________________________________
+
+6)
+
+public class P23 {
+    public static void main(String[] args) {
+        int[] a=new int[5];
+        try {
+            int a, b;
+	    a=0;
+	    b=5;
+            a[6]=a/b;
+        } catch(ArrayIndexOutOfBoundsException e) {
+            System.out.println("Array Size Small...");
+        } catch(ArithmeticException e) {
+            System.out.println("Division By Zero Impossible");
+        } catch(Exception e) {
+            System.out.println("General Exception");
+        }
+    }
+}
+_____________________________________________________________________________
+
+7)
+
+class C1 {
+     void test() {
+        System.out.println("Welcome...");
+    }
+}
+class C2 extends C1 {
+    void test() {
+        
+        System.out.println("Bye");
+    }
+}
+public class P28 {
+    public static void main(String[] args) {
+         C1 obj = (C2)new C2();
+        obj.test();
+    }
+}
+
+_____________________________________________________________
+
+8)
+
+class C1 {
+    int a;
+    public C1(int a) {
+        this.a=a;
+    }
+}
+class C2 extends C1 {
+    int a;
+    int b;
+    public C2(int a) {
+        super(a);
+        this.a=12;
+        this.b=5;
+    }
+    public C2(int a,int b) {
+        super(a);
+        this.b=b;
+        System.out.println(a+""+b);
+    }
+}
+public class P30 {
+    public static void main(String[] args) {
+        new C2(15,56);
+    }
+}
+____________________________________________________________________________
+
+9)
+
+public class P31 {
+    public static void main(String[] args) {
+        try {
+            int a=5;
+            int b=0;
+            int c=b/a;
+            System.out.println("Hi");
+        } catch(ArithmeticException e) {
+            System.out.println("Divex");
+        } finally {
+            System.out.println("Program End...");
+        }
+        System.out.println("Program from FTP114");
+    }
+}
+
+___________________________________________________________________________
+
+10)
+
+public class P35 {
+
+    static int x=12;
+    
+    public static int show() {
+
+        return x--;
+    }
+
+    public static void main(String[] args) { 
+        show();
+        System.out.println(x);
+    }
+}
+_____________________________________________________________________________
+
+11) 
+
+class C1 {
+    public int x=1;
+    private C1() {
+        System.out.println("jhg");
+    }
+}
+
+class C2 extends C1 {
+    int x;
+    C2(int x) {
+       this.x=x;
+    }
+}
+public class P37 {
+    public static void main(String[] args) {
+        C2 obj = new C2(10);
+        System.out.println(obj.x);
+    }
+}
+
+___________________________________________________________________________
+
+12)
+
+public class P38 {
+    int sum() {
+        return 5;
+    }
+
+    public static void main(String[] args) {
+        System.out.println(sum());
+    }
+}
+
+___________________________________________________________________________
+
+13)
+
+public class P39 {
+    static boolean climate;
+
+    public static void main(String[] args) {
+        System.out.println(climate);
+    }
+}
+
+_______________________________________________________________________
+
+14)
+
+class Demo {
+    static {
+        System.out.println("Hi");
+    }
+}
+public class P40 {
+    public static void main(String[] args) {
+        System.out.println("Bye");
+    }
+    static {
+        System.out.println("Hello");
+    }
+}
+
+_________________________________________________________________________
+
+15)
+
+import java.util.HashSet;
+import java.util.Set;
+
+public class P44 {
+    public static void main(String[] args) {
+        Set hs = new HashSet();
+        hs.add(new Integer(12));
+        hs.add(new Integer(12));
+        hs.add(new Integer(12));
+        hs.add(new Integer(12));
+        for(Object ob : hs) {
+            System.out.println(ob);
+        }
+    }
+}
+
+_____________________________________________________________________________
+
+16)
+
+import java.util.Date;
+import java.text.SimpleDateFormat;
+import java.text.ParseException;
+public class P45 {
+    public static void main(String[] args) throws ParseException {
+        Date obj = new Date();
+        System.out.println(obj);
+        String str ="2019/02/23";
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd");
+        Date d = sdf.parse(str);
+        System.out.println(d.getMonth());
+        System.out.println(d.getDay());
+        System.out.println(d.getDate());
+    }
+}
+
+____________________________________________________________________________
+
+17)
+
+public class Quiz3 {
+    public static void main(String[] args) {
+        System.out.println("5" +3+8); 
+        System.out.println("5+3" +8); 
+        System.out.println("5" + (3+8));  
+        System.out.println("5" -3+8);  
+        System.out.println("5" +3-8);  
+    }
+}
+
+_____________________________________________________________________________
+
+18)
+
+public class Quiz10 {
+    public static void main(String[] args) {
+        int i=10;
+      byte b = (Byte)10;
+        System.out.println(b);
+    }
+}
+
+_______________________________________________________________________________
+
+19)
+
+public class Quiz22 {
+    public static void main(String[] args) {
+        int[] a=new int[]{1,2,3,4,5};
+        try {
+        for(int i=0;i<=7;i++) {
+            System.out.println(a[i]);
+        }
+        } catch(ArrayIndexOutOfBoundsException e) {
+            System.out.println("0");
+        }
+    }
+}
+
+________________________________________________________________________
+
+20)
+
+public class Ex1 {
+    public static void main(String[] args) {
+        try {
+            return ;
+        } catch(Exception e) {
+            System.out.println("Hi");
+        } finally {
+            System.out.println("Finally");
+        }
+    }
+}
+
+___________________________________________________________________________
+
+21)
+
+public class Ex2 {
+    public static void main(String[] args) {
+        try {
+            System.out.println("A");
+            throw new NullPointerException();
+        } catch(ArithmeticException e) {
+            System.out.println(e);
+        }
+    }
+}
+
+____________________________________________________________________________
+
+22)
+
+import java.util.HashMap;
+
+public class Hm {
+    public static void main(String[] args) {
+        HashMap hm = new HashMap();
+        hm.put(null,"Divya");
+        hm.put(null, "Demo");
+        hm.put(null, "Raj");
+        hm.put(null,"Kalpana");
+        String x =(String)hm.getOrDefault(2, "Not found");
+        System.out.println(x);
+    }
+}
+
+_______________________________________________________________________________
+
+23)
+
+public class Hm2 {
+    public static void main(String[] args) {
+        HashMap hm = new HashMap();
+        hm.put(123, "Hi");
+        hm.put(234, "Demo");
+        hm.put(333, "Test");
+        hm.put(123, "Java");
+        String x =(String)hm.getOrDefault(444, "Not found");
+        System.out.println(x);
+    }
+}
+
+_________________________________________________________________________
+
+24)
+
+public class P1 {
+    public void show(int x) {
+        switch(x) {
+            case 1 : 
+                System.out.println("Hi 1");
+                break;
+            case 2 : 
+                System.out.println("Bye 2");
+            case 3 : 
+                System.out.println("Hello 3");
+            case 4 :
+                System.out.println("Test 4");
+                break;
+            case 5 : 
+                System.out.println("Demo 5");
+            default :
+                System.out.println("Default Message");
+        }
+    }
+    public static void main(String[] args) {
+        P1 obj = new P1();
+        obj.show(2);
+    }
+}
+____________________________________________________________________________
+
+25)
+
+class C1 {
+    private C1() {
+        System.out.println("C1");
+    }
+}
+
+class C2 extends C1 {
+    public C2() {
+        System.out.println("C2");
+    }
+}
+public class P50 {
+    public static void main(String[] args) {
+        new C2();
+    }
+}
+
+__________________________________________________________________________
+
+Scenario for 5 marks : 
+_______________________
+
+Employ (Empno, Ename, Gender, Basic)
+Assume we have a Set of HashSet contains 100 Employ  records, i want to delete the duplicate records as all 4 properties of Employ must be same, can you suggest mecha ism for this 
+
+_________________________________________________________________________
