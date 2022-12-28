@@ -10,9 +10,12 @@ For AddStock, StockId to be generated automatically as S001, S002, S003 etc...
 
 4) PlaceOrder 
 
-OrderId to be generated automatically, 
+OrderId to be generated automatically O001
+, 
 
 Take input parameters as StockId and QuantityOrdered 
+
+   -> If QuantityOrdered less than QuantityAvail then only proceed 
 
    -> Insert Record into Orders Table
    -> Update the QuantityAvaialble in Stock Table
