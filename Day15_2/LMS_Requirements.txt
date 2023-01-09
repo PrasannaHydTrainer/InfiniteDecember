@@ -13,7 +13,7 @@ ____________
 
 Accept
 
-empId, leaveStartDate, leaveEndDate, leaveReason, leaveType
+ empId, leaveStartDate, leaveEndDate, leaveReason, leaveType
 
 for who is top level manager leaveStaus is APPROVED remaining PENDING
 
