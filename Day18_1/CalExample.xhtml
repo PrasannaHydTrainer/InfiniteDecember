@@ -3,13 +3,20 @@
       xmlns:f="http://java.sun.com/jsf/core"
       xmlns:p="http://primefaces.org/ui"
       xmlns:h="http://java.sun.com/jsf/html">
-	<h:head>  
+		<h:head>  
+			<h:messages>
+			</h:messages>
 <title>Calendar Example</title>  
 </h:head>  
-<h:body>  
-<h:panelGrid columns="2" cellpadding="5">  
-<p:outputLabel for="inline" value="Select Date" />  
-<p:calendar id="inline" value="#{calendar.date}" mode="popup" />  
-</h:panelGrid>  
+
+<h:body>
+	<h:form>
+		
+	<h:outputLabel for="date" value="Select Date">
+
+	</h:outputLabel>
+	<p:calendar id="date" value="#{calendar.date}" mode="popup" />  
+	</h:form>
+	
 </h:body>
 </html>
