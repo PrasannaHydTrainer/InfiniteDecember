@@ -1,8 +1,8 @@
-drop database if exists cmsinfinitenew_2;
+drop database if exists cmsinfinitenew;
 
-create database cmsinfinitenew_2;
+create database cmsinfinitenew;
 
-use cmsinfinitenew_2;
+use cmsinfinitenew;
 
 DROP TABLE IF EXISTS Restaurant;
 DROP TABLE IF EXISTS WALLET;
