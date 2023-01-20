@@ -11,14 +11,27 @@ public class EmployBAL {
 		dao = new EmployDaoImpl();
 		sb = new StringBuilder();
 	}
-	
+
+	public String deleteEmployBal(int empno) {
+		return dao.deleteEmployDao(empno);
+	}
+	public Employ searchEmployBal(int empno) {
+		return dao.searchEmployDao(empno);
+	}
 	public String addEmployBal(Employ employ) throws EmployException {
 		if (doValid(employ)==false) {
 			throw new EmployException(sb.toString());
 		}
 		return dao.addEmployDao(employ);
 	}
-	
+
+	public String updateEmployBal(Employ employ) throws EmployException {
+		if (doValid(employ)==false) {
+			throw new EmployException(sb.toString());
+		}
+		return dao.updateEmployDao(employ);
+	}
+
 	public List<Employ> showEmployBal() {
 		return dao.showEmployDao();
 	}
