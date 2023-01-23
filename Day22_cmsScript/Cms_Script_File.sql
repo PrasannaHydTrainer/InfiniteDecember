@@ -4,33 +4,51 @@ create database cmsinfinitenew;
 
 use cmsinfinitenew;
 
+DROP TABLE IF EXISTS Restaurant;
 DROP TABLE IF EXISTS WALLET;
 DROP TABLE IF EXISTS Menu;
 drop table if exists vendor;
 DROP TABLE IF EXISTS Customer;
 DROP TABLE IF EXISTS Orders;
 
+CREATE TABLE Restaurant (
+   Restaurant_ID INT PRIMARY KEY AUTO_INCREMENT,
+   Restaurant_Name varchar(100),
+   Branch varchar(30),
+   City varchar(30),
+   MobileNo varchar(30),
+   Email varchar(30),
+   Rating varchar(10)  
+);
+
+Insert into Restaurant(Restaurant_name, branch, city, Mobileno,Email,Rating)
+values('Bawarchi','RTC Roads','Hyderabad','843882334','bawarchi@gmail.com','4.2'),
+('Basil','Banjara Hills','Hyderabad','904383323','basil@gmail.com','3.9'),
+('Chutneys','SP Road','Hyderabad','9042344232','chutneys@gmail.com','4.7'),
+('Pariwar','ASRAO Nagar','Secunderabad','903233442','pariwar@gmail.com','4.8'),
+('Sangeetha','Guindy','Chennai','843882334','san@gmail.com','4.8');
 
 CREATE TABLE Menu (
   MEN_ID int(10)  NOT NULL AUTO_INCREMENT,
   MEN_ITEM varchar(50) DEFAULT NULL,
   MEN_PRICE numeric(9,2),
+  Restaurant_ID INT REFERENCES Restaurant(Restaurant_ID),
   MEN_CALORIES double NOT NULL,
   MEN_SPECIALITY varchar(50) NOT NULL,
   PRIMARY KEY (MEN_ID)
 );
 
 
-insert into MENU set MEN_ITEM='CHICKEN BIRIYANI', MEN_CALORIES=750 , MEN_SPECIALITY='NON-VEG', MEN_PRICE=856;
-insert into MENU set MEN_ITEM='CHICKEN 65', MEN_CALORIES=500 , MEN_SPECIALITY='NON-VEG',MEN_PRICE=674;
-insert into MENU set MEN_ITEM='GOBI MANCHURIAN', MEN_CALORIES=650 , MEN_SPECIALITY='VEG',MEN_PRICE=684;
-insert into MENU set MEN_ITEM='CHICKEN MANCHURIAN', MEN_CALORIES=750 , MEN_SPECIALITY='NON-VEG',MEN_PRICE=999;
-insert into MENU set MEN_ITEM='FISH', MEN_CALORIES=850 , MEN_SPECIALITY='NON-VEG',MEN_PRICE=901;
-insert into MENU set MEN_ITEM='DAHI BHALLE', MEN_CALORIES=150 , MEN_SPECIALITY='VEG',MEN_PRICE=111;
-insert into MENU set MEN_ITEM='MIX PRANTHA', MEN_CALORIES=360 , MEN_SPECIALITY='VEG',MEN_PRICE=911;
-insert into MENU set MEN_ITEM='GOL GAPPE', MEN_CALORIES=170 , MEN_SPECIALITY='VEG',MEN_PRICE=901;
-insert into MENU set MEN_ITEM='PRAWN BIRYANI', MEN_CALORIES=580 , MEN_SPECIALITY='NON-VEG',MEN_PRICE=901;
-insert into MENU set MEN_ITEM='THAI NOODLES', MEN_CALORIES=660 , MEN_SPECIALITY='VEG',MEN_PRICE=744;
+insert into MENU set MEN_ITEM='CHICKEN BIRIYANI', MEN_CALORIES=750 , MEN_SPECIALITY='NON-VEG', MEN_PRICE=856,Restaurant_ID=1;
+insert into MENU set MEN_ITEM='CHICKEN 65', MEN_CALORIES=500 , MEN_SPECIALITY='NON-VEG',MEN_PRICE=674,Restaurant_ID=1;
+insert into MENU set MEN_ITEM='GOBI MANCHURIAN', MEN_CALORIES=650 , MEN_SPECIALITY='VEG',MEN_PRICE=684,Restaurant_ID=2;
+insert into MENU set MEN_ITEM='CHICKEN MANCHURIAN', MEN_CALORIES=750 , MEN_SPECIALITY='NON-VEG',MEN_PRICE=999,Restaurant_ID=2;
+insert into MENU set MEN_ITEM='FISH', MEN_CALORIES=850 , MEN_SPECIALITY='NON-VEG',MEN_PRICE=901,Restaurant_ID=3;
+insert into MENU set MEN_ITEM='DAHI BHALLE', MEN_CALORIES=150 , MEN_SPECIALITY='VEG',MEN_PRICE=111,Restaurant_ID=3;
+insert into MENU set MEN_ITEM='MIX PRANTHA', MEN_CALORIES=360 , MEN_SPECIALITY='VEG',MEN_PRICE=911,Restaurant_ID=4;
+insert into MENU set MEN_ITEM='GOL GAPPE', MEN_CALORIES=170 , MEN_SPECIALITY='VEG',MEN_PRICE=901,Restaurant_ID=3;
+insert into MENU set MEN_ITEM='PRAWN BIRYANI', MEN_CALORIES=580 , MEN_SPECIALITY='NON-VEG',MEN_PRICE=901,Restaurant_ID=2;
+insert into MENU set MEN_ITEM='THAI NOODLES', MEN_CALORIES=660 , MEN_SPECIALITY='VEG',MEN_PRICE=744,Restaurant_ID=3;
 
 SELECT * FROM Menu;
 
